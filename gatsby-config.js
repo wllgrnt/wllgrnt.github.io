@@ -32,6 +32,7 @@ module.exports = {
       options: {
       // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: "UA-103801480-2",
+        head: true,
       },
     },    // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
