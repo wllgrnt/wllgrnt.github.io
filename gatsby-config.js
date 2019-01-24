@@ -11,6 +11,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        icon: `${__dirname}/src/images/ring.png`,
       },
     },
     `gatsby-transformer-sharp`,
