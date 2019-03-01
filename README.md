@@ -3,6 +3,12 @@ Github Pages site for our wedding
 
 This is a Gatsby build straight from the gatsby-site starter template.
 
+Requires npm, gatsby
+
+Steps:
+- Git clone this repo
+- Run ```npm install``` to install (many) dependencies
+- Run one of the scripts below!
 
 
 Scripts:

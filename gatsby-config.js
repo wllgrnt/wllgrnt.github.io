@@ -3,6 +3,16 @@ module.exports = {
     title: `Will and Christina Wedding`,
     description: `Gatsby save-the-date website, built off the default starter.`,
     author: `@wllgrnt`,
+    menuLinks:[
+      {
+        name:'home',
+        link:'/'
+      },
+      {
+        name:'venues',
+        link:'/venues'
+      }
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
