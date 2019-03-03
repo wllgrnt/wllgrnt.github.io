@@ -1,15 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Will and Christina Wedding`,
+    title: `Will and Christina's Wedding`,
     description: `Gatsby save-the-date website, built off the default starter.`,
     author: `@wllgrnt`,
     menuLinks:[
       {
-        name:'home',
+        name:'Home',
         link:'/'
       },
       {
-        name:'venues',
+        name:'About the Venues',
         link:'/venues'
       }
     ],
