@@ -13,20 +13,60 @@ import Img from 'gatsby-image'
  * - `StaticQuery`: https://gatsby.app/staticquery
  */
 
-const Image = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+
+
+function withImageData(WrappedComponent) {
+  return props => (
+    <StaticQuery
+      query={graphql`
+      query multipleImageQuery {
+        churchInterior: file(relativePath: { eq: "stnicks_interior.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        churchExterior: file(relativePath: { eq: "stnicks_exterior.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        churchMap: file(relativePath: { eq: "stnicks_map.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        placeHolder: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
             }
           }
         }
       }
-    `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
-  />
-)
-export default Image
+      `}
+      render={data => <WrappedComponent {...props} imageData={data} />}
+    />
+  );
+};
+
+const ImageOfChurchMap = withImageData(props => (
+  <Img fluid={props.imageData.churchMap.childImageSharp.fluid} />
+));
+const ImageOfChurchInterior = withImageData(props => (
+  <Img fluid={props.imageData.churchInterior.childImageSharp.fluid} />
+));
+const ImageOfChurchExterior = withImageData(props => (
+  <Img fluid={props.imageData.churchExterior.childImageSharp.fluid} />
+));
+const PlaceHolderImage = withImageData(props => (
+  <Img fluid={props.imageData.placeHolder.childImageSharp.fluid} />
+));
+
+
+export {ImageOfChurchMap, ImageOfChurchInterior, ImageOfChurchExterior, PlaceHolderImage   };
