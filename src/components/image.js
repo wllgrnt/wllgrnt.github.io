@@ -22,21 +22,21 @@ function withImageData(WrappedComponent) {
       query multipleImageQuery {
         churchInterior: file(relativePath: { eq: "stnicks_interior.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         churchExterior: file(relativePath: { eq: "stnicks_exterior.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         churchMap: file(relativePath: { eq: "stnicks_map.png" }) {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }
