@@ -6,7 +6,7 @@ import './header.css'
 const Header = ({ siteTitle, menuLinks }) => (
   <div
     style={{
-      background: `#ff5000`,
+      background: `#ff652f`,
       marginBottom: `1.45rem`,
     }}
   >

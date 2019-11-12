@@ -19,7 +19,13 @@ const IndexPage = () => (
       {/* <Image /> */}
     </div>
     {/* <Link to="/page-2/">Go to page 2</Link> */}
+  <div style={{position:`relative`, paddingBottom: `calc(176.47% + 44px)`}}>
+    <iframe title="ferret" src='https://gfycat.com/ifr/FlawlessNegativeIcelandgull' frameborder='0' scrolling='no' width='100%' height='100%' style={{position:"absolute", top:0, left:0}} allowfullscreen>
+    </iframe>
+  </div>
+  
   </Layout>
 )
 
 export default IndexPage
+

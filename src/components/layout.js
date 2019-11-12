@@ -32,9 +32,6 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <footer>
-            © William Grant {new Date().getFullYear()}
-          </footer>
         </div>
       </>
     )}
