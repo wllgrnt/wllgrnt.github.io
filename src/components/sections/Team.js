@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from 'react'
+import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global';
+import { Section, Container } from '@components/global'
 
 const TEAM = [
   {
@@ -36,7 +36,7 @@ const TEAM = [
     image: 'rose.jpg',
     role: 'Marketing',
   },
-];
+]
 
 const Team = () => (
   <StaticQuery
@@ -74,7 +74,7 @@ const Team = () => (
             {TEAM.map(({ name, image, role }) => {
               const img = data.allFile.edges.find(
                 ({ node }) => node.relativePath === image
-              ).node;
+              ).node
 
               return (
                 <div key={name}>
@@ -82,7 +82,7 @@ const Team = () => (
                   <Title>{name}</Title>
                   <Subtitle>{role}</Subtitle>
                 </div>
-              );
+              )
             })}
           </TeamGrid>
           <Art>
@@ -95,7 +95,7 @@ const Team = () => (
       </Section>
     )}
   />
-);
+)
 
 const TeamGrid = styled.div`
   display: grid;
@@ -118,7 +118,7 @@ const TeamGrid = styled.div`
   @media (max-width: ${props => props.theme.screen.xs}) {
     grid-gap: 24px;
   }
-`;
+`
 
 const Art = styled.figure`
   width: 800px;
@@ -134,7 +134,7 @@ const Art = styled.figure`
   @media (max-width: ${props => props.theme.screen.md}) {
     display: none;
   }
-`;
+`
 
 const ArtMobile = styled.figure`
   width: 100%;
@@ -146,16 +146,16 @@ const ArtMobile = styled.figure`
   @media (max-width: ${props => props.theme.screen.md}) {
     display: block;
   }
-`;
+`
 
 const Title = styled.p`
   margin-top: 16px;
   color: ${props => props.theme.color.black.regular};
-`;
+`
 
 const Subtitle = styled.p`
   ${props => props.theme.font_size.small};
   color: ${props => props.theme.color.black.light};
-`;
+`
 
-export default Team;
+export default Team

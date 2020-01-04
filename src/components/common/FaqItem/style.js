@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   &:hover {
@@ -53,4 +53,4 @@ export const Wrapper = styled.div`
     ${props => props.theme.font_size.small};
     color: ${props => props.theme.color.black.light};
   }
-`;
+`

@@ -1,7 +1,7 @@
-import React from 'react';
-import Collapsible from 'react-collapsible';
+import React from 'react'
+import Collapsible from 'react-collapsible'
 
-import { Wrapper } from './style';
+import { Wrapper } from './style'
 
 const FaqItem = ({ title, children }) => (
   <Wrapper>
@@ -19,6 +19,6 @@ const FaqItem = ({ title, children }) => (
       {children}
     </Collapsible>
   </Wrapper>
-);
+)
 
-export default FaqItem;
+export default FaqItem

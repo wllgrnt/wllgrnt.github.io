@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-import { Section, Container } from '@components/global';
+import { Section, Container } from '@components/global'
 
-import FaqItem from '@common/FaqItem';
-import ExternalLink from '@common/ExternalLink';
+import FaqItem from '@common/FaqItem'
+import ExternalLink from '@common/ExternalLink'
 
 const FAQS = [
   {
@@ -62,7 +62,7 @@ const FAQS = [
       </>
     ),
   },
-];
+]
 
 const Faq = () => (
   <Section id="faq">
@@ -77,6 +77,6 @@ const Faq = () => (
       </div>
     </Container>
   </Section>
-);
+)
 
-export default Faq;
+export default Faq

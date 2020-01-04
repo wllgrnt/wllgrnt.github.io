@@ -1,5 +1,5 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from 'react'
+import Helmet from 'react-helmet'
 
 const SEO_DATA = {
   description: 'Will and Christinas wedding site',
@@ -15,7 +15,7 @@ const SEO_DATA = {
     id: '',
     img: '',
   },
-};
+}
 
 const SEO = () => {
   return (
@@ -41,7 +41,7 @@ const SEO = () => {
       <title>{SEO_DATA.title}</title>
       <html lang="en" />
     </Helmet>
-  );
-};
+  )
+}
 
-export default SEO;
+export default SEO

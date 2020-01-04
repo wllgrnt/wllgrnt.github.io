@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Scrollspy from 'react-scrollspy';
+import React, { Component } from 'react'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import Scrollspy from 'react-scrollspy'
 
-import { Container } from '@components/global';
+import { Container } from '@components/global'
 import {
   Nav,
   NavItem,
@@ -11,37 +11,55 @@ import {
   NavListWrapper,
   MobileMenu,
   Mobile,
-} from './style';
+} from './style'
 
-import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
+import { ReactComponent as MenuIcon } from '@static/icons/menu.svg'
 
-const NAV_ITEMS = ['On the Day', 'The Day After', 'Getting Here', 'About', 'Registry', 'RSVP'];
+const NAV_ITEMS = [
+  'On the Day',
+  'The Day After',
+  'Getting Here',
+  'About',
+  'Registry',
+  'RSVP',
+]
 
 class Navbar extends Component {
   state = {
     mobileMenuOpen: false,
-  };
+  }
 
   toggleMobileMenu = () => {
-    this.setState(prevState => ({ mobileMenuOpen: !prevState.mobileMenuOpen }));
-  };
+    this.setState(prevState => ({ mobileMenuOpen: !prevState.mobileMenuOpen }))
+  }
 
   closeMobileMenu = () => {
     if (this.state.mobileMenuOpen) {
-      this.setState({ mobileMenuOpen: false });
+      this.setState({ mobileMenuOpen: false })
     }
-  };
+  }
 
   getNavAnchorLink = item => (
-    <AnchorLink href={`#${item.toLowerCase().split(" ").join("")}`} onClick={this.closeMobileMenu}>
+    <AnchorLink
+      href={`#${item
+        .toLowerCase()
+        .split(' ')
+        .join('')}`}
+      onClick={this.closeMobileMenu}
+    >
       {item}
     </AnchorLink>
-  );
+  )
 
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
       <Scrollspy
-        items={NAV_ITEMS.map(item => item.toLowerCase().split(" ").join(""))}
+        items={NAV_ITEMS.map(item =>
+          item
+            .toLowerCase()
+            .split(' ')
+            .join('')
+        )}
         currentClassName="active"
         mobile={mobile}
         offset={-64}
@@ -51,10 +69,10 @@ class Navbar extends Component {
         ))}
       </Scrollspy>
     </NavListWrapper>
-  );
+  )
 
   render() {
-    const { mobileMenuOpen } = this.state;
+    const { mobileMenuOpen } = this.state
 
     return (
       <Nav {...this.props}>
@@ -76,8 +94,8 @@ class Navbar extends Component {
           )}
         </Mobile>
       </Nav>
-    );
+    )
   }
 }
 
-export default Navbar;
+export default Navbar

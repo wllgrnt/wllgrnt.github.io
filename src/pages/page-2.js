@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 
-import Layout from '@common/Layout';
-import { Container } from '@components/global';
+import Layout from '@common/Layout'
+import { Container } from '@components/global'
 
 const SecondPage = () => (
   <Layout>
@@ -12,6 +12,6 @@ const SecondPage = () => (
       <Link to="/">Go back to the homepage</Link>
     </Container>
   </Layout>
-);
+)
 
-export default SecondPage;
+export default SecondPage

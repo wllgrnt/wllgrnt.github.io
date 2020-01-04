@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from 'react'
+import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global';
+import { Section, Container } from '@components/global'
 
 const TheDayAfter = () => (
-    <StaticQuery
-        query={graphql`
+  <StaticQuery
+    query={graphql`
       query {
-        art_fast: file(
+        art_ideas: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
+          name: { eq: "ideas" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -21,21 +21,19 @@ const TheDayAfter = () => (
         }
       }
     `}
-        render={data => (
-            <Section id="thedayafter">
-                <Container>
-                    <Grid> 
-                        <div>
-                            <h2>Brunch</h2>
-                            <p>
-                                Green eggs and ham
-                            </p>
-                        </div>
-                        <Art>
-                            <Img fluid={data.art_fast.childImageSharp.fluid} />
-                        </Art>
-                    </Grid>
-                    {/* <Grid inverse>
+    render={data => (
+      <Section id="thedayafter">
+        <Container>
+          <Grid>
+            <Art>
+              <Img fluid={data.art_ideas.childImageSharp.fluid} />
+            </Art>
+            <div>
+              <h2>Brunch</h2>
+              <p>Green eggs and ham</p>
+            </div>
+          </Grid>
+          {/* <Grid inverse>
             <Art>
               <Img fluid={data.art_learn.childImageSharp.fluid} />
             </Art>
@@ -48,11 +46,11 @@ const TheDayAfter = () => (
               </p>
             </div>
           </Grid> */}
-                </Container>
-            </Section>
-        )}
-    />
-);
+        </Container>
+      </Section>
+    )}
+  />
+)
 
 const Grid = styled.div`
   display: grid;
@@ -64,8 +62,8 @@ const Grid = styled.div`
   margin: 24px 0;
 
   ${props =>
-        props.inverse &&
-        `
+    props.inverse &&
+    `
     text-align: left;
     grid-template-columns: 2fr 3fr;
   `}
@@ -84,19 +82,19 @@ const Grid = styled.div`
     }
 
     ${props =>
-        props.inverse &&
-        `
+      props.inverse &&
+      `
         ${Art} {
           order: 2;
         }
     `}
   }
-`;
+`
 
 const Art = styled.figure`
   margin: 0;
   max-width: 380px;
   width: 100%;
-`;
+`
 
-export default TheDayAfter;
+export default TheDayAfter

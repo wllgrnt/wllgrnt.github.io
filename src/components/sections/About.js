@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from 'react'
+import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global';
+import { Section, Container } from '@components/global'
 
 const About = () => (
   <StaticQuery
@@ -47,21 +47,19 @@ const About = () => (
       <Section id="about">
         <Container>
           <Grid>
-            <div>
-              <h2>About Us</h2>
-              <p>
-                Great narcissism
-              </p>
-            </div>
             <Art>
               <Img fluid={data.art_learn.childImageSharp.fluid} />
             </Art>
+            <div>
+              <h2>About Us</h2>
+              <p>Great narcissism</p>
+            </div>
           </Grid>
         </Container>
       </Section>
     )}
   />
-);
+)
 
 const Grid = styled.div`
   display: grid;
@@ -100,12 +98,12 @@ const Grid = styled.div`
         }
     `}
   }
-`;
+`
 
 const Art = styled.figure`
   margin: 0;
   max-width: 380px;
   width: 100%;
-`;
+`
 
-export default About;
+export default About
