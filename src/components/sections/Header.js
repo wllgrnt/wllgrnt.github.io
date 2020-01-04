@@ -30,7 +30,7 @@ const Header = () => (
               <Img fluid={data.art_build.childImageSharp.fluid} />
             </Art>
             <Text>
-              <h1>Will & Christina are getting married!</h1>
+              <h1>We're getting married!</h1>
               <br />
               <p>
                 (again)
