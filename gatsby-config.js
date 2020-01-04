@@ -1,27 +1,31 @@
+const path = require('path');
+
 module.exports = {
-  siteMetadata: {
-    title: `Will and Christina's Wedding`,
-    description: `Gatsby save-the-date website, built off the default starter.`,
-    author: `@wllgrnt`,
-    menuLinks:[
-      {
-        name:'Home',
-        link:'/'
-      },
-      {
-        name:'About the Venues',
-        link:'/venues'
-      }
-    ],
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-svgr`,
+      options: {
+        svgoConfig: {
+          plugins: {
+            removeViewBox: false,
+          },
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-        icon: `${__dirname}/src/images/ring.png`,
+        name: `team`,
+        path: `${__dirname}/src/images/team`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `art`,
+        path: `${__dirname}/src/images/art`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -29,13 +33,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Will and Christinas Wedding`,
+        short_name: `willandchristina`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#8bd8ed`,
+        theme_color: `#8bd8ed`,
         display: `minimal-ui`,
-        icon: `src/images/ring.png`, // This path is relative to the root of the site.
+        icon: `static/favicon.svg`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`average`, `prata\:400,700`],
       },
     },
     {
@@ -45,8 +55,19 @@ module.exports = {
         trackingId: "UA-103801480-2",
         head: true,
       },
-    },    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@common': path.resolve(__dirname, 'src/components/common'),
+          '@images': path.resolve(__dirname, 'src/images'),
+          '@sections': path.resolve(__dirname, 'src/components/sections'),
+          '@styles': path.resolve(__dirname, 'src/styles/'),
+          '@static': path.resolve(__dirname, 'static/'),
+        },
+      },
+    },
   ],
-}
+};

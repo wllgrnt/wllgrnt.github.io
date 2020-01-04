@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Navbar from "./navbar"
 import './layout.css'
+import SEO from '../components/seo'
+
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -22,7 +25,9 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
+        <SEO title="Home" keywords={[`gatsby`, `application`, `react`, `wedding`]} />
+        <Navbar menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
+        {/* <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} /> */}
         <div
           style={{
             margin: `0 auto`,

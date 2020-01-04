@@ -1,31 +1,39 @@
-import React from 'react'
-// import { Link } from 'gatsby'
+import React from 'react';
 
-import Layout from '../components/layout'
-// import Image from '../components/image'
-import SEO from '../components/seo'
+import Layout from '@common/Layout';
+import Navbar from '@common/Navbar';
+
+import OnTheDay from '@sections/OnTheDay'
+import TheDayAfter from '@sections/TheDayAfter'
+import GettingHere from '@sections/GettingHere'
+import About from '@sections/About';
+import Registry from '@sections/Registry';
+import RSVP from '@sections/RSVP';
+
+
+import Header from '@sections/Header';
+import Brands from '@sections/Brands';
+import Team from '@sections/Team';
+import Faq from '@sections/Faq';
+import Footer from '@sections/Footer';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Will and Christina are getting married!</h1>
-    <p>In Prague!</p>
-    <p>On the 23rd of May 2020!</p>
-    <p>On this website you'll find details of the venues for the ceremony and reception, as well as
-      some advice on Prague for first-time visitors. Looking forward to seeing you all there! </p>
-
-    <p>(Also, this is all still under construction, so will look a little rough) </p>
-    <div style={{ maxHeight: `500px`, marginBottom: `1.45rem` }}>
-      {/* <Image /> */}
-    </div>
-    {/* <Link to="/page-2/">Go to page 2</Link> */}
-  <div style={{position:`relative`, paddingBottom: `calc(176.47% + 44px)`}}>
-    <iframe title="ferret" src='https://gfycat.com/ifr/FlawlessNegativeIcelandgull' frameborder='0' scrolling='no' width='100%' height='100%' style={{position:"absolute", top:0, left:0}} allowfullscreen>
-    </iframe>
-  </div>
-  
+    <Navbar />
+    <Header />
+    <OnTheDay />
+    <TheDayAfter />
+    <GettingHere />
+    <About />
+    <Registry />
+    <RSVP />
+{/* 
+    <Header />
+    <Brands />
+    <Team />
+    <Faq /> */}
+    <Footer />
   </Layout>
-)
+);
 
-export default IndexPage
-
+export default IndexPage;
