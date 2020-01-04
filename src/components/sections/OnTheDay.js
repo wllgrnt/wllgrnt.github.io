@@ -9,9 +9,20 @@ const OnTheDay = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
+        art_church: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
+          name: { eq: "church" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 760) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+
+        art_villa: file(
+          sourceInstanceName: { eq: "art" }
+          name: { eq: "villa" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -24,28 +35,25 @@ const OnTheDay = () => (
     render={data => (
       <Section id="ontheday">
         <Container>
+          <h1>On the Day</h1>
           <Grid>
             <div>
               <h2>The Ceremony</h2>
-              <p>Is at Villa Richter</p>
+              <p>Is at St Nicholas' Church.</p>
             </div>
             <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
+              <Img fluid={data.art_church.childImageSharp.fluid} />
             </Art>
           </Grid>
-          {/* <Grid inverse>
+          <Grid>
             <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
+              <Img fluid={data.art_villa.childImageSharp.fluid} />
             </Art>
             <div>
-              <h2>Nothing new to learn here</h2>
-              <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
-              </p>
+              <h2>The Reception</h2>
+              <p>Is at Villa Richter.</p>
             </div>
-          </Grid> */}
+          </Grid>
         </Container>
       </Section>
     )}

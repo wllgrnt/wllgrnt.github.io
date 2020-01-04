@@ -25,13 +25,13 @@ const RSVP = () => (
       <Section id="rsvp">
         <Container>
           <Grid>
-            <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
-            </Art>
             <div>
               <h2>RSVP</h2>
               <p>Please respond.</p>
             </div>
+            <Art>
+              <Img fluid={data.art_ideas.childImageSharp.fluid} />
+            </Art>
           </Grid>
           {/* <Grid inverse>
             <Art>

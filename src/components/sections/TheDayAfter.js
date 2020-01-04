@@ -9,9 +9,9 @@ const TheDayAfter = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_ideas: file(
+        art_castle: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
+          name: { eq: "castle" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -24,14 +24,15 @@ const TheDayAfter = () => (
     render={data => (
       <Section id="thedayafter">
         <Container>
+          <h1>The Day After</h1>
           <Grid>
-            <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
-            </Art>
             <div>
               <h2>Brunch</h2>
-              <p>Green eggs and ham</p>
+              <p>At Hotel Hoffmeister</p>
             </div>
+            <Art>
+              <Img fluid={data.art_castle.childImageSharp.fluid} />
+            </Art>
           </Grid>
           {/* <Grid inverse>
             <Art>

@@ -25,13 +25,14 @@ const Registry = () => (
       <Section id="registry">
         <Container>
           <Grid>
-            <div>
-              <h2>Registry</h2>
-              <p>Buy us goodies.</p>
-            </div>
             <Art>
               <Img fluid={data.art_fast.childImageSharp.fluid} />
             </Art>
+
+            <div>
+              <h2>Registry</h2>
+              <p>Ineffective altruism.</p>
+            </div>
           </Grid>
           {/* <Grid inverse>
             <Art>

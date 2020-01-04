@@ -58,6 +58,11 @@ const Footer = () => (
                 <ExternalLink href="https://www.gatsbyjs.org/starters/ajayns/gatsby-absurd/">
                   gatbsy-absurd
                 </ExternalLink>
+                . Artwork by
+                {` `}
+                <ExternalLink href="http://spring-studio.cz/">
+                  Spring Studio
+                </ExternalLink>
               </span>
             </Copyright>
             <SocialIcons>

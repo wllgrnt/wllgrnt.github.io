@@ -47,13 +47,13 @@ const About = () => (
       <Section id="about">
         <Container>
           <Grid>
-            <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
-            </Art>
             <div>
               <h2>About Us</h2>
               <p>Great narcissism</p>
             </div>
+            <Art>
+              <Img fluid={data.art_learn.childImageSharp.fluid} />
+            </Art>
           </Grid>
         </Container>
       </Section>
