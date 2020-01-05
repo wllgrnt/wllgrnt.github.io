@@ -50,7 +50,7 @@ const TextInput = ({ type, id, label, error, value, onChange, className, ...prop
     className
   );
   return (
-    <div className={classes}>
+    <div className={classes} style={{textAlign: "left"}}>
       <Label htmlFor={id} error={error}>
         {label}
       </Label>
