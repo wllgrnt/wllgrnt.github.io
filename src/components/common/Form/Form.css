@@ -7,14 +7,6 @@
     color: #08c;
   }
   
-  code {
-    background: #eee;
-    padding: .1rem;
-    font-family: 'Menlo';
-    font-size: 13px;
-    color: #ff00aa;
-  }
-  
   .text-input {
     padding: .5rem;
     font-size: 16px;
@@ -94,28 +86,3 @@
     border: 1px solid #aaa;
     color: #555;
   }
-  
-  
-  
-  .animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-  }
-  
-  @keyframes shake {
-    from, to {
-      transform: translate3d(0, 0, 0);
-    }
-  
-    10%, 30%, 50%, 70%, 90% {
-      transform: translate3d(-10px, 0, 0);
-    }
-  
-    20%, 40%, 60%, 80% {
-      transform: translate3d(10px, 0, 0);
-    }
-  }
-  
-  /* .shake {
-    animation-name: shake;
-  } */

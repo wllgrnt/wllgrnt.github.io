@@ -28,8 +28,8 @@ const RSVP = () => (
           <Grid>
             <div>
               <h2>RSVP</h2>
-              <p>Please respond.</p>
-              <Form user={{ email: '', firstName: '', lastName: '' }} />
+              {/* <p>Please respond.</p> */}
+              <Form user={{ email: '', name: '', security: ''}} />
             </div>
             <Art>
               <Img fluid={data.art_ideas.childImageSharp.fluid} />

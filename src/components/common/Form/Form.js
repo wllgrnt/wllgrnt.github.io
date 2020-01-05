@@ -8,15 +8,16 @@ import './Form.css';
 
 const formikEnhancer = withFormik({
   validationSchema: Yup.object().shape({
-    firstName: Yup.string()
-      .min(2, "C'mon, your name is longer than that")
+    name: Yup.string()
+      .min(2, "Your name is longer than that")
       .required('First name is required.'),
-    lastName: Yup.string()
-      .min(2, "C'mon, your name is longer than that")
-      .required('Last name is required.'),
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
+    security: Yup.string()
+      .lowercase()
+      .matches(/(^grant$|^gladkova$)/, {excludeEmptyString: true, message: "That's not right!"})
+      .required('Security Q is required')
   }),
 
   mapPropsToValues: ({ user }) => ({
@@ -78,24 +79,14 @@ const MyForm = props => {
     isSubmitting,
   } = props;
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{marginTop: "40px"}}>
       <TextInput
-        id="firstName"
+        id="name"
         type="text"
-        label="First Name"
-        placeholder="John"
-        error={touched.firstName && errors.firstName}
-        value={values.firstName}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      <TextInput
-        id="lastName"
-        type="text"
-        label="Last Name"
-        placeholder="Doe"
-        error={touched.lastName && errors.lastName}
-        value={values.lastName}
+        label="Name"
+        placeholder="Jan Hus"
+        error={touched.name && errors.name}
+        value={values.name}
         onChange={handleChange}
         onBlur={handleBlur}
       />
@@ -106,6 +97,16 @@ const MyForm = props => {
         placeholder="Enter your email"
         error={touched.email && errors.email}
         value={values.email}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      <TextInput
+        id="security"
+        type="text"
+        label="Security Q: What is either Will or Christina's last name?"
+        placeholder="Who are we?"
+        error={touched.security && errors.security}
+        value={values.security}
         onChange={handleChange}
         onBlur={handleBlur}
       />
