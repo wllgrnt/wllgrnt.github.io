@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { Section, Container } from '@components/global'
+import Form from '@common/Form'
 
 const RSVP = () => (
   <StaticQuery
@@ -28,6 +29,7 @@ const RSVP = () => (
             <div>
               <h2>RSVP</h2>
               <p>Please respond.</p>
+              <Form user={{ email: '', firstName: '', lastName: '' }} />
             </div>
             <Art>
               <Img fluid={data.art_ideas.childImageSharp.fluid} />
