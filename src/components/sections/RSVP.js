@@ -29,7 +29,7 @@ const RSVP = () => (
             <div>
               <h2>RSVP</h2>
               {/* <p>Please respond.</p> */}
-              <Form user={{ email: '', name: '', security: ''}} />
+              <Form user={{ email: '', name: '', security: '' }} />
             </div>
             <Art>
               <Img fluid={data.art_ideas.childImageSharp.fluid} />

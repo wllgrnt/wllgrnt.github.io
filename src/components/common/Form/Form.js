@@ -1,56 +1,76 @@
 import React from 'react'
-import { withFormik } from 'formik';
-import * as Yup from 'yup';
-import classnames from 'classnames';
-import './Form.css';
+import { withFormik } from 'formik'
+import * as Yup from 'yup'
+import classnames from 'classnames'
+import Select from 'react-select'
+// import 'react-select/dist/react-select.css'
+import './Form.css'
 
 // import { Wrapper } from './style'
 
 const formikEnhancer = withFormik({
   validationSchema: Yup.object().shape({
     name: Yup.string()
-      .min(2, "Your name is longer than that")
-      .required('First name is required.'),
+      .min(2, 'Your name is longer than that')
+      .required('Name is required'),
     email: Yup.string()
       .email('Invalid email address')
-      .required('Email is required!'),
+      .required('Email is required'),
+    menuchoice: Yup.string().required('Select a menu'),
+    allergies: Yup.string(),
     security: Yup.string()
       .lowercase()
-      .matches(/(^grant$|^gladkova$)/, {excludeEmptyString: true, message: "That's not right!"})
-      .required('Security Q is required')
+      .matches(/(^grant$|^gladkova$)/, {
+        excludeEmptyString: true,
+        message: "That's not right!",
+      })
+      .required('Security Q is required'),
   }),
 
   mapPropsToValues: ({ user }) => ({
     ...user,
   }),
-  handleSubmit: (payload, { setSubmitting }) => {
-    alert(payload.email);
-    setSubmitting(false);
+  handleSubmit: (values, { setSubmitting }) => {
+    const payload = {
+      ...values,
+      menuchoice: values.menuchoice.value,
+    }
+    alert(JSON.stringify(payload, null, 2))
+    setSubmitting(false)
   },
   displayName: 'Form',
-});
+})
 
 const InputFeedback = ({ error }) =>
-  error ? <div className="input-feedback">{error}</div> : null;
+  error ? <div className="input-feedback">{error}</div> : null
 
 const Label = ({ error, className, children, ...props }) => {
   return (
     <label className="label" {...props}>
       {children}
     </label>
-  );
-};
+  )
+}
 
-const TextInput = ({ type, id, label, error, value, onChange, className, ...props }) => {
+const TextInput = ({
+  type,
+  id,
+  label,
+  error,
+  value,
+  onChange,
+  className,
+  ...props
+}) => {
   const classes = classnames(
     'input-group',
     {
-      'error': !!error,
+      error: !!error,
     },
     className
-  );
+  )
   return (
-    <div className={classes} style={{textAlign: "left"}}>
+    <div className={classes} style={{ textAlign: 'left' }}>
       <Label htmlFor={id} error={error}>
         {label}
       </Label>
@@ -64,8 +84,9 @@ const TextInput = ({ type, id, label, error, value, onChange, className, ...prop
       />
       <InputFeedback error={error} />
     </div>
-  );
-};
+  )
+}
+
 const MyForm = props => {
   const {
     values,
@@ -76,10 +97,12 @@ const MyForm = props => {
     handleBlur,
     handleSubmit,
     handleReset,
+    setFieldValue,
+    setFieldTouched,
     isSubmitting,
-  } = props;
+  } = props
   return (
-    <form onSubmit={handleSubmit} style={{marginTop: "40px"}}>
+    <form onSubmit={handleSubmit} style={{ marginTop: '40px' }}>
       <TextInput
         id="name"
         type="text"
@@ -94,11 +117,31 @@ const MyForm = props => {
         id="email"
         type="email"
         label="Email"
-        placeholder="Enter your email"
+        placeholder="janhus@husmail.cz"
         error={touched.email && errors.email}
         value={values.email}
         onChange={handleChange}
         onBlur={handleBlur}
+      />
+      <TextInput
+        id="allergies"
+        type="text"
+        label="Allergies"
+        placeholder="Leave blank if you don't have any"
+        error={touched.allergies && errors.allergies}
+        value={values.allergies}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      <MySelect
+        id="menuchoice"
+        label="Menu choice"
+        placeholder="Beef fillet, or saffron risotto"
+        error={touched.menuchoice && errors.menuchoice}
+        value={values.menuchoice}
+        onChange={setFieldValue}
+        onBlur={setFieldTouched}
+        toucher={touched.menuchoice}
       />
       <TextInput
         id="security"
@@ -122,10 +165,60 @@ const MyForm = props => {
         Submit
       </button>
     </form>
-  );
-};
+  )
+}
 
-const Form = formikEnhancer(MyForm);
+const Form = formikEnhancer(MyForm)
 
+const options = [
+  { value: 'Beef', label: 'Beef Fillet' },
+  { value: 'Veggie', label: 'Saffron Risotto (Vegetarian)' },
+]
+
+const MySelect = (
+  id,
+  label,
+  error,
+  onChange,
+  onBlur,
+  value,
+  className,
+  ...props
+) => {
+  const handleChange = value => {
+    // this is going to call setFieldValue and manually update values.menuchoice
+    onChange('menuchoice', value)
+  }
+
+  const handleBlur = () => {
+    // this is going to call setFieldTouched and manually update touched.menuchoice
+    onBlur('menuchoice', true)
+  }
+  const classes = classnames(
+    'input-group',
+    {
+      error: !!error,
+    },
+    className
+  )
+
+  return (
+    <div className={classes} style={{ textAlign: 'left' }}>
+      {/* <Label htmlFor={id} error={error}>
+        {label}
+      </Label> */}
+      <Select
+        id={id}
+        options={options}
+        multi={false}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={value}
+        {...props}
+      />
+      <InputFeedback error={error} />
+    </div>
+  )
+}
 
 export default Form
