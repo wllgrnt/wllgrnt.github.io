@@ -46,10 +46,11 @@ const About = () => (
     render={data => (
       <Section id="about">
         <Container>
-          <Grid>
+          <Grid inverse>
             <div>
               <h2>About Us</h2>
               <p>Great narcissism</p>
+              {/* <p>Here is </p> */}
             </div>
             <Art>
               <Img fluid={data.art_learn.childImageSharp.fluid} />

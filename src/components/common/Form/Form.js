@@ -16,7 +16,8 @@ const formikEnhancer = withFormik({
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required'),
-    menuchoice: Yup.string().required('Select a menu'),
+    menuchoice: Yup.string().required('Choose a menu'),
+    menuchoiceplusone: Yup.string(),
     allergies: Yup.string(),
     security: Yup.string()
       .lowercase()
@@ -31,10 +32,17 @@ const formikEnhancer = withFormik({
     ...user,
   }),
   handleSubmit: (values, { setSubmitting }) => {
+    setSubmitting(true)
+
+
     const payload = {
       ...values,
-      menuchoice: values.menuchoice.value,
+      // menuchoice: values.menuchoice.value,
     }
+
+    // POST to Google form
+    // https://docs.google.com/forms/d/e/[FORM_ID]/formResponse?entry.1098499744=AnswerField1&entry.1090138332=AnswerField2
+    const FORM_ID = "1dqGXn6dFvEIaHLFon4_p_PSAlvLVxlbBncjqQCHqN5Y";
     alert(JSON.stringify(payload, null, 2))
     setSubmitting(false)
   },
@@ -133,7 +141,7 @@ const MyForm = props => {
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      <MySelect
+      {/* <MySelect
         id="menuchoice"
         label="Menu choice"
         placeholder="Beef fillet, or saffron risotto"
@@ -142,6 +150,26 @@ const MyForm = props => {
         onChange={setFieldValue}
         onBlur={setFieldTouched}
         toucher={touched.menuchoice}
+      /> */}
+      <TextInput
+        id="menuchoice"
+        type="text"
+        label="Menu choice"
+        placeholder="Beef fillet or vegetarian risotto?"
+        error={touched.menuchoice && errors.menuchoice}
+        value={values.menuchoice}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      <TextInput
+        id="menuchoice"
+        type="text"
+        label="Menu choice for +1"
+        placeholder="Leave blank if not applicable"
+        error={touched.plusonemenuchoice && errors.plusonemenuchoice}
+        value={values.plusonemenuchoice}
+        onChange={handleChange}
+        onBlur={handleBlur}
       />
       <TextInput
         id="security"

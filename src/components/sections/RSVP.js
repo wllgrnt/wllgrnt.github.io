@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 
 import { Section, Container } from '@components/global'
 import Form from '@common/Form'
+import ExternalLink from '@common/ExternalLink'
 
 const RSVP = () => (
   <StaticQuery
@@ -25,11 +26,19 @@ const RSVP = () => (
     render={data => (
       <Section id="rsvp">
         <Container>
-          <Grid>
+          <Grid inverse>
             <div>
               <h2>RSVP</h2>
               {/* <p>Please respond.</p> */}
-              <Form user={{ email: '', name: '', security: '' }} />
+              {/* <Form user={{ email: '', name: '', security: '' }} /> */}
+              <p>To let us know you're coming, and choose your dinner options, please use the form below:
+
+              </p>
+              <div style={{ marginTop: "50px" }}>
+                <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
+                  Thanks!
+                  </StyledExternalLink>
+              </div>
             </div>
             <Art>
               <Img fluid={data.art_ideas.childImageSharp.fluid} />
@@ -84,8 +93,8 @@ const Grid = styled.div`
     }
 
     ${props =>
-      props.inverse &&
-      `
+    props.inverse &&
+    `
         ${Art} {
           order: 2;
         }
@@ -98,5 +107,26 @@ const Art = styled.figure`
   max-width: 380px;
   width: 100%;
 `
+const StyledExternalLink = styled(ExternalLink)`
+  &:hover {
+    color: ${props => props.theme.color.black.regular};
+    }
+  max-width: 150px;
+  margin: 50px 0;
+  padding: 12px 20px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: #08c;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  text-decoration: none;
+`
+
+
 
 export default RSVP
