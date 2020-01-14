@@ -99,6 +99,11 @@ const Grid = styled.div`
   }
 `
 
+
+const ColouredSection = styled.section`
+  background-color: ${props => props.theme.color.primary};
+`
+
 const Art = styled.figure`
   margin: 0;
   max-width: 380px;
