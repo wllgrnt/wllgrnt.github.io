@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 import { Container } from '@components/global'
 import ExternalLink from '@common/ExternalLink'
 
-const Header = () => (
+const TestHeader = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -57,11 +57,11 @@ const Header = () => (
     `}
     render={data => (
       <HeaderWrapper>
-        {/* <Art>
+        <Art>
           <Img fluid={data.art_candw.childImageSharp.fluid} />
-        </Art> */}
+        </Art>
         <Container>
-          {/* <Grid>
+          <Grid>
             <Art>
               <Img fluid={data.art_candw_skiing.childImageSharp.fluid} />
             </Art>
@@ -70,7 +70,7 @@ const Header = () => (
               <br />
               <p>(again)</p>
             </Text>
-          </Grid> */}
+          </Grid>
           <Grid>
             <Art>
               <Img fluid={data.art_candw_ham.childImageSharp.fluid} />
@@ -134,4 +134,4 @@ const Text = styled.div`
   }
 `
 
-export default Header
+export default TestHeader
