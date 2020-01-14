@@ -14,7 +14,7 @@ const TheDayAfter = () => (
           name: { eq: "castle" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 760) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
@@ -68,7 +68,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-gap: 40px;
-  text-align: right;
+  text-align: center;
   align-items: center;
   justify-items: center;
   margin: 24px 0;
@@ -76,7 +76,7 @@ const Grid = styled.div`
   ${props =>
     props.inverse &&
     `
-    text-align: left;
+    text-align: center;
     grid-template-columns: 2fr 3fr;
   `}
 
@@ -86,7 +86,7 @@ const Grid = styled.div`
 
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
-    text-align: left;
+    text-align: center;
     margin-bottom: 96px;
 
     &:last-child {
@@ -105,7 +105,7 @@ const Grid = styled.div`
 
 const Art = styled.figure`
   margin: 0;
-  max-width: 380px;
+  max-width: 600px;
   width: 100%;
 `
 

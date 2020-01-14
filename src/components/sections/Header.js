@@ -23,7 +23,7 @@ const Header = () => (
 
         art_candw_skiing: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "candw_skiing_circle" }
+          name: { eq: "candw_skiing_circle_cropped" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1400) {
@@ -34,7 +34,7 @@ const Header = () => (
 
         art_candw_ham: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "candw_ham_rounded" }
+          name: { eq: "candw_ham_circle_crop" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1400) {
@@ -80,6 +80,9 @@ const Header = () => (
               <br />
               <p>(again)</p>
             </Text>
+            <Art>
+              <Img fluid={data.art_candw_skiing.childImageSharp.fluid} />
+            </Art>
           </Grid>
         </Container>
       </HeaderWrapper>
@@ -98,8 +101,8 @@ const HeaderWrapper = styled.header`
 
 const Art = styled.figure`
   width: 100%;
-  margin: 0;
-
+  margin: 10 auto;
+  margin-left: -5px;
   // > div {
   //   width: 120%;
   //   margin-bottom: -4.5%;
@@ -112,8 +115,9 @@ const Art = styled.figure`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  text-align: center;
   grid-gap: 64px;
 
   @media (max-width: ${props => props.theme.screen.md}) {
@@ -121,14 +125,14 @@ const Grid = styled.div`
     grid-gap: 80px;
 
     > ${Art} {
-      order: 2;
+      order: 0;
     }
   }
 `
 
 const Text = styled.div`
   justify-self: center;
-
+  text-align: center;
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: start;
   }

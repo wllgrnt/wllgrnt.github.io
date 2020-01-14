@@ -86,7 +86,7 @@ const Grid = styled.div`
 
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
-    text-align: left;
+    text-align: center;
     margin-bottom: 96px;
 
     &:last-child {

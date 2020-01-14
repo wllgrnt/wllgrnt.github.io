@@ -52,6 +52,7 @@ const OnTheDay = () => (
           <p style={{ marginTop: '0.5em' }}>
             <b>Dress code:</b> Lounge suits{' '}
           </p>
+          <Grid></Grid>
           <Grid inverse>
             <div>
               <h2>The Ceremony</h2>
@@ -116,9 +117,9 @@ const OnTheDay = () => (
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 2fr 3fr;
   grid-gap: 40px;
-  text-align: right;
+  text-align: center;
   align-items: center;
   justify-items: center;
   margin: 24px 0;
@@ -126,8 +127,9 @@ const Grid = styled.div`
   ${props =>
     props.inverse &&
     `
-    text-align: left;
-    grid-template-columns: 2fr 3fr;
+    text-align: center;
+    grid-template-columns: 3fr 2fr;
+
   `}
 
   h2 {
@@ -136,7 +138,7 @@ const Grid = styled.div`
 
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
-    text-align: left;
+    text-align: center;
     margin-bottom: 96px;
 
     &:last-child {
@@ -147,7 +149,7 @@ const Grid = styled.div`
       props.inverse &&
       `
         ${Art} {
-          order: 2;
+          order: 1;
         }
     `}
   }
