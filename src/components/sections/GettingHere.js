@@ -22,9 +22,9 @@ const GettingHere = () => (
       }
     `}
     render={data => (
-      <Section id="gettinghere">
+      <Section id="transport">
         <Container>
-          <h1>Getting Here</h1>
+          <h1>Transport</h1>
           <Grid>
             <Art>
               <Img fluid={data.art_tram.childImageSharp.fluid} />

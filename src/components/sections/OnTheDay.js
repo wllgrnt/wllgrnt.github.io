@@ -30,16 +30,38 @@ const OnTheDay = () => (
             }
           }
         }
+
+        art_tram: file(
+          sourceInstanceName: { eq: "art" }
+          name: { eq: "tram" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 760) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+
+        
       }
     `}
     render={data => (
       <Section id="ontheday">
         <Container>
           <h1>On the Day</h1>
-          <Grid>
+
+          <h3 style={{ marginTop: "0.5em" }}>Saturday, the 23rd of May</h3>
+          <p style={{marginTop: "0.5em"}}><b>Dress code:</b> Lounge suits </p>
+          <Grid inverse>
             <div>
               <h2>The Ceremony</h2>
-              <p>Is at St Nicholas' Church.</p>
+              <p><b>Start time:</b>  Two o' clock <br />
+                <b>Location:</b> St. Nicholas’ Church, <br />
+                Old Town Square 1101,<br /> Prague<br />
+                {/* (insert map pic if possible) */}
+                <br />
+                The service will be in English.
+              </p>
             </div>
             <Art>
               <Img fluid={data.art_church.childImageSharp.fluid} />
@@ -47,12 +69,27 @@ const OnTheDay = () => (
           </Grid>
           <Grid>
             <Art>
-              <Img fluid={data.art_villa.childImageSharp.fluid} />
+              <Img fluid={data.art_tram.childImageSharp.fluid} />
             </Art>
             <div>
-              <h2>The Reception</h2>
-              <p>Is at Villa Richter.</p>
+              <h2>Liminal Space</h2>
+              <p>A tram will take guests from the church to the reception venue.<br /></p>
+              <p>It is a ten minute walk between the church and the Právnická fakulta tram stop. It is another five minute walk uphill from the drop-off stop to the reception venue. Plan your footwear accordingly! </p>
             </div>
+
+          </Grid>
+          <Grid inverse>
+            <div>
+              <h2>The Reception</h2>
+              <p><b>Location:</b> Villa Richter,<br />
+                Staré zámecké schody 6,<br />
+                Prague</p>
+              <br/>
+              <p>A glass of champagne in the sun, the wedding breakfast, and dancing. </p>
+            </div>
+            <Art>
+              <Img fluid={data.art_villa.childImageSharp.fluid} />
+            </Art>
           </Grid>
         </Container>
       </Section>
@@ -90,8 +127,8 @@ const Grid = styled.div`
     }
 
     ${props =>
-      props.inverse &&
-      `
+    props.inverse &&
+    `
         ${Art} {
           order: 2;
         }

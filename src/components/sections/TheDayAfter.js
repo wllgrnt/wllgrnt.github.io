@@ -25,10 +25,16 @@ const TheDayAfter = () => (
       <Section id="thedayafter">
         <Container>
           <h1>The Day After</h1>
-          <Grid>
-            <div>
-              <h2>Brunch</h2>
-              <p>At Hotel Hoffmeister</p>
+          <h3 style={{ marginTop: "0.5em" }}>Sunday, the 24rd of May</h3>
+          <p style={{ marginTop: "0.5em" }}>Informal and optional brunch. Dress code: Comfy</p>
+          <Grid inverse>
+             <div>
+              <p><b>Start time:</b>  Eleven o' clock <br />
+                <b>Location:</b> Hotel Hoffmeister, <br />
+                Pod Bruskou 144,<br /> Prague<br />
+                {/* (insert map pic if possible) */}
+                <br />
+              </p>
             </div>
             <Art>
               <Img fluid={data.art_castle.childImageSharp.fluid} />
@@ -83,8 +89,8 @@ const Grid = styled.div`
     }
 
     ${props =>
-      props.inverse &&
-      `
+    props.inverse &&
+    `
         ${Art} {
           order: 2;
         }
