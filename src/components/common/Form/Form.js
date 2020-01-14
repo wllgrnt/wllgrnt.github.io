@@ -34,7 +34,6 @@ const formikEnhancer = withFormik({
   handleSubmit: (values, { setSubmitting }) => {
     setSubmitting(true)
 
-
     const payload = {
       ...values,
       // menuchoice: values.menuchoice.value,
@@ -42,7 +41,7 @@ const formikEnhancer = withFormik({
 
     // POST to Google form
     // https://docs.google.com/forms/d/e/[FORM_ID]/formResponse?entry.1098499744=AnswerField1&entry.1090138332=AnswerField2
-    const FORM_ID = "1dqGXn6dFvEIaHLFon4_p_PSAlvLVxlbBncjqQCHqN5Y";
+    const FORM_ID = '1dqGXn6dFvEIaHLFon4_p_PSAlvLVxlbBncjqQCHqN5Y'
     alert(JSON.stringify(payload, null, 2))
     setSubmitting(false)
   },

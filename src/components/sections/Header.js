@@ -53,15 +53,12 @@ const Header = () => (
             }
           }
         }
-
-
-
       }
     `}
     render={data => (
       <HeaderWrapper>
         <Art>
-          <Img fluid={data.art_candw.childImageSharp.fluid}/>
+          <Img fluid={data.art_candw.childImageSharp.fluid} />
         </Art>
         <Container>
           <Grid>
@@ -71,9 +68,7 @@ const Header = () => (
             <Text>
               <h1>Will and Christina are getting married!</h1>
               <br />
-              <p>
-                (again)
-              </p>
+              <p>(again)</p>
             </Text>
           </Grid>
           <Grid>
@@ -83,12 +78,9 @@ const Header = () => (
             <Text>
               <h1>Will and Christina are getting married!</h1>
               <br />
-              <p>
-                (again)
-              </p>
+              <p>(again)</p>
             </Text>
           </Grid>
-
         </Container>
       </HeaderWrapper>
     )}
@@ -141,6 +133,5 @@ const Text = styled.div`
     justify-self: start;
   }
 `
-
 
 export default Header

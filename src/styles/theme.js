@@ -25,8 +25,6 @@ const theme = {
     // primary: '#2e8ed0',
     // secondary: '#eda08b',
     secondary: '#d11d53',
-
-
   },
   screen: {
     xs: '575px',

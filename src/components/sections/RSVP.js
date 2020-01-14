@@ -31,13 +31,14 @@ const RSVP = () => (
               <h2>RSVP</h2>
               {/* <p>Please respond.</p> */}
               {/* <Form user={{ email: '', name: '', security: '' }} /> */}
-              <p>To let us know you're coming, and choose your dinner options, please use the form below:
-
+              <p>
+                To let us know you're coming, and choose your dinner options,
+                please use the form below:
               </p>
-              <div style={{ marginTop: "50px" }}>
+              <div style={{ marginTop: '50px' }}>
                 <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
                   Thanks!
-                  </StyledExternalLink>
+                </StyledExternalLink>
               </div>
             </div>
             <Art>
@@ -93,8 +94,8 @@ const Grid = styled.div`
     }
 
     ${props =>
-    props.inverse &&
-    `
+      props.inverse &&
+      `
         ${Art} {
           order: 2;
         }
@@ -110,7 +111,7 @@ const Art = styled.figure`
 const StyledExternalLink = styled(ExternalLink)`
   &:hover {
     color: ${props => props.theme.color.black.regular};
-    }
+  }
   max-width: 150px;
   margin: 50px 0;
   padding: 12px 20px;
@@ -126,7 +127,5 @@ const StyledExternalLink = styled(ExternalLink)`
   -webkit-appearance: none;
   text-decoration: none;
 `
-
-
 
 export default RSVP

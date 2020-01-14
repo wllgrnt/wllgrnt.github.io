@@ -10,7 +10,6 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 1000;
 
-
   // make the registry and rsvp a different color
   #navlink_rsvp {
     a {
@@ -33,7 +32,6 @@ export const Nav = styled.nav`
       }
     }
   }
-
 `
 
 export const StyledContainer = styled(Container)`
@@ -51,8 +49,8 @@ export const NavListWrapper = styled.div`
     flex-direction: row;
 
     ${({ mobile }) =>
-    mobile &&
-    `
+      mobile &&
+      `
         flex-direction: column;
         margin-top: 1em;
 
@@ -70,7 +68,6 @@ export const NavItem = styled.li`
   ${props => props.theme.font_size.small};
   font-weight: bold;
 
-
   a {
     text-decoration: none;
     // opacity: 0.7;
@@ -82,8 +79,6 @@ export const NavItem = styled.li`
       // opacity: 1;
       // color: white ;
       color: ${props => props.theme.color.white.dark};
-
-
     }
   }
 `

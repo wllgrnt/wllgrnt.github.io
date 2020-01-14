@@ -50,13 +50,14 @@ class Navbar extends Component {
       {item}
     </AnchorLink>
   )
-  
-  getNavID = item => (
-  // Needed for styling
-    "navlink_" + item.toLowerCase()
-  .split(' ')
-  .join('')
-  )
+
+  getNavID = item =>
+    // Needed for styling
+    'navlink_' +
+    item
+      .toLowerCase()
+      .split(' ')
+      .join('')
 
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
@@ -72,7 +73,9 @@ class Navbar extends Component {
         offset={-64}
       >
         {NAV_ITEMS.map(navItem => (
-        <NavItem key={navItem} id={this.getNavID(navItem)}>{this.getNavAnchorLink(navItem)}</NavItem>
+          <NavItem key={navItem} id={this.getNavID(navItem)}>
+            {this.getNavAnchorLink(navItem)}
+          </NavItem>
         ))}
       </Scrollspy>
     </NavListWrapper>
