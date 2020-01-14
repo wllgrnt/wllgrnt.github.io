@@ -32,6 +32,16 @@ const Header = () => (
           }
         }
 
+        art_candw_ham: file(
+          sourceInstanceName: { eq: "art" }
+          name: { eq: "candw_ham_rounded" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 1400) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
 
         art_candw: file(
           sourceInstanceName: { eq: "art" }
@@ -66,6 +76,19 @@ const Header = () => (
               </p>
             </Text>
           </Grid>
+          <Grid>
+            <Art>
+              <Img fluid={data.art_candw_ham.childImageSharp.fluid} />
+            </Art>
+            <Text>
+              <h1>Will and Christina are getting married!</h1>
+              <br />
+              <p>
+                (again)
+              </p>
+            </Text>
+          </Grid>
+
         </Container>
       </HeaderWrapper>
     )}

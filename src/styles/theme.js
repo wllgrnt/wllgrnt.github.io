@@ -20,7 +20,12 @@ const theme = {
       light: '#564F62',
       regular: '#211E26',
     },
-    primary: '#8bd8ed',
+    // primary: '#8bd8ed', 4d5ad8
+    primary: '#2e8ed0',
+    // secondary: '#eda08b',
+    secondary: '#d11d53',
+
+
   },
   screen: {
     xs: '575px',

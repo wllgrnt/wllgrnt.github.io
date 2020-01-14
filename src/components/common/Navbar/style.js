@@ -9,6 +9,31 @@ export const Nav = styled.nav`
   width: 100%;
   top: 0;
   z-index: 1000;
+
+
+  // make the registry and rsvp a different color
+  #navlink_rsvp {
+    a {
+      color: ${props => props.theme.color.secondary};
+    }
+    &.active {
+      a {
+        color: ${props => props.theme.color.white.dark};
+      }
+    }
+  }
+
+  #navlink_registry {
+    a {
+      color: ${props => props.theme.color.secondary};
+    }
+    &.active {
+      a {
+        color: ${props => props.theme.color.white.dark};
+      }
+    }
+  }
+
 `
 
 export const StyledContainer = styled(Container)`
@@ -26,8 +51,8 @@ export const NavListWrapper = styled.div`
     flex-direction: row;
 
     ${({ mobile }) =>
-      mobile &&
-      `
+    mobile &&
+    `
         flex-direction: column;
         margin-top: 1em;
 
@@ -43,16 +68,22 @@ export const NavItem = styled.li`
   margin: 0 0.75em;
   font-family: ${props => props.theme.font.secondary};
   ${props => props.theme.font_size.small};
+  font-weight: bold;
+
 
   a {
     text-decoration: none;
-    opacity: 0.7;
+    // opacity: 0.7;
     color: ${props => props.theme.color.black.regular};
   }
 
   &.active {
     a {
-      opacity: 1;
+      // opacity: 1;
+      // color: white ;
+      color: ${props => props.theme.color.white.dark};
+
+
     }
   }
 `
