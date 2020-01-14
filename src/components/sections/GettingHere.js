@@ -31,9 +31,28 @@ const GettingHere = () => (
             </Art>
             <div>
               {/* <h2>Transport Info</h2> */}
-              <p>Tramz</p>
+              <h3>Getting from the airport</h3>
+              <p>
+                An Uber from the airport will cost £15. Alternatively, take
+                public transport!
+              </p>
             </div>
           </Grid>
+          <Grid inverse>
+            <div>
+              <h3> In and around Prague</h3>
+              <p>
+                Prague probably has the world's best public transport system.
+                The tram system will take contactless payments, and costs 24Kc
+                for a 20-minute trip. Google maps or equivalent will give routes
+                and directions.
+              </p>
+            </div>
+            <Art>
+              <Img fluid={data.art_tram.childImageSharp.fluid} />
+            </Art>
+          </Grid>
+
           {/* <Grid inverse>
             <Art>
               <Img fluid={data.art_learn.childImageSharp.fluid} />
