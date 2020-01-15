@@ -74,7 +74,9 @@ const Header = () => (
               <Img fluid={data.art_castle.childImageSharp.fluid} />
             </Art>
             <Text>
-              <h1>Will and Christina are getting married!</h1>
+              <h1 style={{ fontFamily: `"Palatino", serif` }}>
+                Will and Christina are getting married!
+              </h1>
               <br />
               <p>(again)</p>
             </Text>
