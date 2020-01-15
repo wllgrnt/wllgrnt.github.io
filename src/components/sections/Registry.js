@@ -12,29 +12,41 @@ const Registry = () => (
       </SectionHeader>
       <Grid>
         <div>
-          <p>If you're coming to the wedding, your company is gift enough!<br/></p>
+          <p>
+            If you're coming to the wedding, your company is gift enough!
+            <br />
+          </p>
           <p>
             If you do feel like contributing, then we support the following
             charities:
             <br />
             <br />
           </p>
-          <p><b>
-          <StyledExternalLink href="https://sarcoma.org.uk/donate">
-            Sarcoma UK
-          </StyledExternalLink></b> <br/><br/>
-          <StyledExternalLink href="https://sandbag.org.uk/">
-            <b>Sandbag (Climate Policy think tank)</b>
-          </StyledExternalLink> <br/><br/> 
-
+          <p>
+            <b>
+              <StyledExternalLink href="https://sarcoma.org.uk/donate">
+                Sarcoma UK
+              </StyledExternalLink>
+            </b>{' '}
+            <br />
+            <br />
+            <StyledExternalLink href="https://sandbag.org.uk/">
+              <b>Sandbag (Climate Policy think tank)</b>
+            </StyledExternalLink>{' '}
+            <br />
+            <br />
           </p>
           <p>
             If you really want to put something in our house, you can find our
             registry here:
             <br />
             <br />
+            <StyledExternalLink href="https://www.blueprintregistry.com/registry/willandchristina2020">
+              <b>Blueprint Registry</b>
+            </StyledExternalLink>{' '}
+            <br />
+            <br />
           </p>
-          <p>Registry link</p>
         </div>
       </Grid>
     </Container>

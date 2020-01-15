@@ -1,65 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 import { Section, Container, SectionHeader } from '@components/global'
 // import Form from '@common/Form'
 import ExternalLink from '@common/ExternalLink'
 
 const RSVP = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Section id="rsvp">
-        <Container>
-          <SectionHeader accent>
-            <h1>RSVP</h1>
-          </SectionHeader>
-          <Grid>
-            <div>
-              <p>
-                To let us know you're coming, and choose your dinner options,
-                please use the form below: <br/><br/>
-                <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
-                  <b>RSVP</b>
-                </StyledExternalLink>
-                <br/><br/>Thanks!</p>
-            </div>
-            {/* <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
-            </Art> */}
-          </Grid>
-          {/* <Grid inverse>
-            <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>Nothing new to learn here</h2>
-              <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
-              </p>
-            </div>
-          </Grid> */}
-        </Container>
-      </Section>
-    )}
-  />
+  <Section id="rsvp">
+    <Container>
+      <SectionHeader accent>
+        <h1>RSVP</h1>
+      </SectionHeader>
+      <Grid>
+        <div>
+          <p>
+            To let us know you're coming, and choose your dinner options, please
+            use the form below: <br />
+            <br />
+            <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
+              <b>RSVP</b>
+            </StyledExternalLink>
+            <br />
+            <br />
+            Thanks!
+          </p>
+        </div>
+      </Grid>
+    </Container>
+  </Section>
 )
 
 const Grid = styled.div`
@@ -83,24 +51,8 @@ const Grid = styled.div`
     &:last-child {
       margin-bottom: 24px;
     }
-
-    ${props =>
-      props.inverse &&
-      `
-        ${Art} {
-          order: 2;
-        }
-    `}
   }
 `
-
-const Art = styled.figure`
-  margin: 0;
-  max-width: 380px;
-  width: 100%;
-`
-
-
 
 const StyledExternalLink = styled(ExternalLink)`
   // margin: 2em 0;
