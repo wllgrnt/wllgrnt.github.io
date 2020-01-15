@@ -1,80 +1,44 @@
 import React from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 import { Section, Container, SectionHeader } from '@components/global'
+import ExternalLink from '@common/ExternalLink'
 
 const Registry = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_fast: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Section id="registry">
-        <Container>
-          <SectionHeader accent>
-            <h1>Registry</h1>
-          </SectionHeader>
-          <Grid>
-            {/* <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
-            </Art> */}
+  <Section id="registry">
+    <Container>
+      <SectionHeader accent>
+        <h1>Registry</h1>
+      </SectionHeader>
+      <Grid>
+        <div>
+          <p>If you're coming to the wedding, your company is gift enough!<br/></p>
+          <p>
+            If you do feel like contributing, then we support the following
+            charities:
+            <br />
+            <br />
+          </p>
+          <p><b>
+          <StyledExternalLink href="https://sarcoma.org.uk/donate">
+            Sarcoma UK
+          </StyledExternalLink></b> <br/><br/>
+          <StyledExternalLink href="https://sandbag.org.uk/">
+            <b>Sandbag (Climate Policy think tank)</b>
+          </StyledExternalLink> <br/><br/> 
 
-            <div>
-              <p>
-                If you're coming to the wedding, your company is gift enough!.
-              </p>
-              <p>
-                {' '}
-                If you do feel like contributing, then we support the following
-                charities:
-                <br />
-                <br />
-              </p>
-              <p>Sarcoma charity</p>
-              <p>
-                Climate charity
-                <br />
-                <br />
-              </p>
-              <p>
-                If you really want to put something in our house, you can find
-                our registry here:
-                <br />
-                <br />
-              </p>
-              <p>Registry link</p>
-            </div>
-          </Grid>
-          {/* <Grid inverse>
-            <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>Nothing new to learn here</h2>
-              <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
-              </p>
-            </div>
-          </Grid> */}
-        </Container>
-      </Section>
-    )}
-  />
+          </p>
+          <p>
+            If you really want to put something in our house, you can find our
+            registry here:
+            <br />
+            <br />
+          </p>
+          <p>Registry link</p>
+        </div>
+      </Grid>
+    </Container>
+  </Section>
 )
 
 const Grid = styled.div`
@@ -98,21 +62,17 @@ const Grid = styled.div`
     &:last-child {
       margin-bottom: 24px;
     }
-
-    ${props =>
-      props.inverse &&
-      `
-        ${Art} {
-          order: 2;
-        }
-    `}
   }
 `
 
-const Art = styled.figure`
-  margin: 0;
-  max-width: 380px;
-  width: 100%;
+const StyledExternalLink = styled(ExternalLink)`
+  // margin: 2em 0;
+  &:hover {
+    color: ${props => props.theme.color.black.lighter};
+  }
+  text-decoration: none;
+  color: inherit;
+  ${props => props.theme.font_size.regular};
 `
 
 export default Registry

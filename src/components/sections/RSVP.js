@@ -33,14 +33,11 @@ const RSVP = () => (
             <div>
               <p>
                 To let us know you're coming, and choose your dinner options,
-                please use the form below:
-              </p>
-              <div style={{ marginTop: '50px', marginBottom: '50px' }}>
+                please use the form below: <br/><br/>
                 <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
-                  RSVP
+                  <b>RSVP</b>
                 </StyledExternalLink>
-              </div>
-              <p>Thanks!</p>
+                <br/><br/>Thanks!</p>
             </div>
             {/* <Art>
               <Img fluid={data.art_ideas.childImageSharp.fluid} />
@@ -102,24 +99,37 @@ const Art = styled.figure`
   max-width: 380px;
   width: 100%;
 `
+
+
+
 const StyledExternalLink = styled(ExternalLink)`
+  // margin: 2em 0;
   &:hover {
-    color: ${props => props.theme.color.black.regular};
+    color: ${props => props.theme.color.black.lighter};
   }
-  max-width: 150px;
-  margin: 50px 0;
-  padding: 12px 20px;
-  border-style: none;
-  border-radius: 5px;
-  background-color: #08c;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  font-size: 20px;
-  font-weight: 500;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
-  -webkit-appearance: none;
   text-decoration: none;
+  color: inherit;
+  ${props => props.theme.font_size.regular};
 `
+
+// const StyledExternalLink = styled(ExternalLink)`
+//   &:hover {
+//     color: ${props => props.theme.color.black.regular};
+//   }
+//   max-width: 150px;
+//   margin: 50px 0;
+//   padding: 12px 20px;
+//   border-style: none;
+//   border-radius: 5px;
+//   background-color: #08c;
+//   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+//   font-size: 20px;
+//   font-weight: 500;
+//   color: #fff;
+//   cursor: pointer;
+//   outline: none;
+//   -webkit-appearance: none;
+//   text-decoration: none;
+// `
 
 export default RSVP
