@@ -65,13 +65,13 @@ const Footer = () => (
                 </ExternalLink>
               </span>
             </Copyright>
-            <SocialIcons>
+            {/* <SocialIcons>
               {SOCIAL.map(({ icon, link }) => (
                 <ExternalLink key={link} href={link}>
                   <img src={icon} alt="link" />
                 </ExternalLink>
               ))}
-            </SocialIcons>
+            </SocialIcons> */}
           </StyledContainer>
         </FooterWrapper>
       </React.Fragment>

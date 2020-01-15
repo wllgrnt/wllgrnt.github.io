@@ -32,7 +32,8 @@ export const Container = styled.div`
 export const Section = styled.section`
   padding: 128px 0;
   overflow: hidden;
-
+  margin-bottom: -50px;
+  margin-top: -50px;
   @media (max-width: ${props => props.theme.screen.md}) {
     padding: 96px 0;
   }
@@ -44,4 +45,14 @@ export const Section = styled.section`
         ? props.theme.color.white.dark
         : props.theme.color.primary
     }`};
+`
+
+export const SectionHeader = styled.div`
+  ${props =>
+    props.accent &&
+    `background-color: ${props.theme.color.sectionheader}; 
+  `};
+  // Horrible hacks to make the colouring full-width
+  margin: 0 -9999rem;
+  padding: 1rem 9999rem;
 `

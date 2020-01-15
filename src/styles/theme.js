@@ -25,6 +25,7 @@ const theme = {
     // primary: '#2e8ed0',
     // secondary: '#eda08b',
     secondary: '#d11d53',
+    sectionheader: 'rgba(117,209,234, 0.2)',
   },
   screen: {
     xs: '575px',

@@ -3,41 +3,41 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global'
+import { Section, Container, SectionHeader } from '@components/global'
 
 const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
+        art_candw_skiing: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
+          name: { eq: "candw_skiing_circle_cropped" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            fluid(maxWidth: 1400) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
 
-        art_learn: file(
+        art_candw_ham: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
+          name: { eq: "candw_ham_circle_crop" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            fluid(maxWidth: 1400) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
 
-        art_ideas: file(
+        art_candw_japan: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
+          name: { eq: "kinkakuji" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            fluid(maxWidth: 1400) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -46,14 +46,43 @@ const About = () => (
     render={data => (
       <Section id="aboutus">
         <Container>
-          <Grid inverse>
+          <SectionHeader accent>
+            <h1>About Us</h1>
+          </SectionHeader>
+          <Grid>
             <div>
-              <h2>About Us</h2>
-              <p>Great narcissism</p>
+              <p>
+                We met at Trinity College, Cambridge, where we both studied
+                Natural Sciences (Christina reading chemistry, Will reading
+                physics), and started dating in October 2013.
+              </p>
               {/* <p>Here is </p> */}
             </div>
             <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
+              <Img fluid={data.art_candw_skiing.childImageSharp.fluid} />
+            </Art>
+          </Grid>
+          <Grid>
+            <Art>
+              <Img fluid={data.art_candw_japan.childImageSharp.fluid} />
+            </Art>
+            <div>
+              <p>
+                We got engaged in Japan in August 2018 (Will tried to propose by
+                Mt Fuji, but it was too cloudy to be seen!){' '}
+              </p>
+              {/* <p>Here is </p> */}
+            </div>
+          </Grid>
+          <Grid>
+            <div>
+              <p>
+                Now we live in San Francisco! Christina is a postdoctoral
+                researcher at UCSF, whilst Will is an unemployed loafer.
+              </p>
+            </div>
+            <Art>
+              <Img fluid={data.art_candw_ham.childImageSharp.fluid} />
             </Art>
           </Grid>
         </Container>
@@ -66,7 +95,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-gap: 40px;
-  text-align: right;
+  text-align: center;
   align-items: center;
   justify-items: center;
   margin: 24px 0;
@@ -74,7 +103,7 @@ const Grid = styled.div`
   ${props =>
     props.inverse &&
     `
-    text-align: left;
+    text-align: center;
     grid-template-columns: 2fr 3fr;
   `}
 
@@ -84,7 +113,7 @@ const Grid = styled.div`
 
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
-    text-align: left;
+    text-align: center;
     margin-bottom: 96px;
 
     &:last-child {

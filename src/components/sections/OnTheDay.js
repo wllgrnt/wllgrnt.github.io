@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global'
+import { Section, Container, SectionHeader } from '@components/global'
 
 const OnTheDay = () => (
   <StaticQuery
@@ -46,12 +46,14 @@ const OnTheDay = () => (
     render={data => (
       <Section id="ontheday">
         <Container>
-          <h3>On the Day</h3>
+          <SectionHeader accent>
+            <h3>On the Day</h3>
 
-          <h1 style={{ marginTop: '0.5em' }}>Saturday, the 23rd of May</h1>
-          <p style={{ marginTop: '0.5em' }}>
-            <b>Dress code:</b> Lounge suits{' '}
-          </p>
+            <h1 style={{ marginTop: '0.5em' }}>Saturday, the 23rd of May</h1>
+            <p style={{ marginTop: '0.5em' }}>
+              <b>Dress code:</b> Lounge suits{' '}
+            </p>
+          </SectionHeader>
           <Grid inverse>
             <div>
               <h2>Ceremony</h2>
@@ -71,7 +73,7 @@ const OnTheDay = () => (
             </Art>
           </Grid>
           <Grid>
-            <Art>
+            <Art small>
               <Img fluid={data.art_tram.childImageSharp.fluid} />
             </Art>
             <div>
@@ -158,13 +160,10 @@ const Grid = styled.div`
   }
 `
 
-const ColouredSection = styled.section`
-  background-color: ${props => props.theme.color.primary};
-`
-
 const Art = styled.figure`
   margin: 0;
-  max-width: 380px;
+  max-width: 500px;
+  ${props => props.small && `max-width: 360px;`};
   width: 100%;
 `
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global'
+import { Section, Container, SectionHeader } from '@components/global'
 
 const TheDayAfter = () => (
   <StaticQuery
@@ -24,9 +24,11 @@ const TheDayAfter = () => (
     render={data => (
       <Section id="thedayafter">
         <Container>
-          <h3>The Day After</h3>
-          <h1 style={{ marginTop: '0.5em' }}>Sunday, the 24rd of May</h1>
-          <p style={{ marginTop: '0.5em' }}>Dress code: Comfy</p>
+          <SectionHeader accent>
+            <h3>The Day After</h3>
+            <h1 style={{ marginTop: '0.5em' }}>Sunday, the 24rd of May</h1>
+            <p style={{ marginTop: '0.5em' }}>Dress code: Comfy</p>
+          </SectionHeader>
           <Grid>
             <div style={{ marginTop: '1em', textAlign: 'center' }}>
               <h2 style={{ marginTop: '0.5em' }}>Brunch</h2>

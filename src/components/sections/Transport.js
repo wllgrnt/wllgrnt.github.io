@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global'
+import { Section, Container, SectionHeader } from '@components/global'
 
 const Transport = () => (
   <StaticQuery
@@ -24,7 +24,9 @@ const Transport = () => (
     render={data => (
       <Section id="transport">
         <Container>
-          <h1>Transport</h1>
+          <SectionHeader accent>
+            <h1>Transport</h1>
+          </SectionHeader>
           <Grid>
             {/* <Art>
               <Img fluid={data.art_tram.childImageSharp.fluid} />

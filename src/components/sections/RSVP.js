@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global'
-import Form from '@common/Form'
+import { Section, Container, SectionHeader } from '@components/global'
+// import Form from '@common/Form'
 import ExternalLink from '@common/ExternalLink'
 
 const RSVP = () => (
@@ -26,11 +26,11 @@ const RSVP = () => (
     render={data => (
       <Section id="rsvp">
         <Container>
-          <Grid inverse>
+          <SectionHeader accent>
+            <h1>RSVP</h1>
+          </SectionHeader>
+          <Grid>
             <div>
-              <h2>RSVP</h2>
-              {/* <p>Please respond.</p> */}
-              {/* <Form user={{ email: '', name: '', security: '' }} /> */}
               <p>
                 To let us know you're coming, and choose your dinner options,
                 please use the form below:
@@ -40,11 +40,11 @@ const RSVP = () => (
                   RSVP
                 </StyledExternalLink>
               </div>
-              <p>Thanks</p>
+              <p>Thanks!</p>
             </div>
-            <Art>
+            {/* <Art>
               <Img fluid={data.art_ideas.childImageSharp.fluid} />
-            </Art>
+            </Art> */}
           </Grid>
           {/* <Grid inverse>
             <Art>
@@ -67,19 +67,12 @@ const RSVP = () => (
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr;
   grid-gap: 40px;
-  text-align: right;
+  text-align: center;
   align-items: center;
   justify-items: center;
   margin: 24px 0;
-
-  ${props =>
-    props.inverse &&
-    `
-    text-align: left;
-    grid-template-columns: 2fr 3fr;
-  `}
 
   h2 {
     margin-bottom: 16px;
