@@ -1,7 +1,7 @@
 const theme = {
   font: {
     primary: `'Palatino', serif`,
-    secondary: `'Playfair Display', serif`,
+    secondary: `'Alegreya SC', serif`,
   },
   font_size: {
     small: 'font-size: 20px; line-height: 30px',
