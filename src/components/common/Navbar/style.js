@@ -66,7 +66,7 @@ export const NavItem = styled.li`
   margin: 0 0.75em;
   font-family: ${props => props.theme.font.secondary};
   ${props => props.theme.font_size.regular};
-  font-weight: bold;
+  // font-weight: 500;
 
   a {
     text-decoration: none;
@@ -89,8 +89,9 @@ export const MobileMenu = styled.div`
 `
 
 export const Brand = styled.div`
-  font-family: ${props => props.theme.font.primary};
+  font-family: ${props => props.theme.font.secondary};
   ${props => props.theme.font_size.regular};
+  // font-weight: bold;
 `
 
 export const Mobile = styled.div`

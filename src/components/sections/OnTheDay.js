@@ -49,8 +49,10 @@ const OnTheDay = () => (
           <SectionHeader accent>
             <h3>On the Day</h3>
 
-            <h1 style={{ marginTop: '0.5em' }}>Saturday, the 23rd of May</h1>
-            <p style={{ marginTop: '0.5em' }}>
+            <h1 style={{ marginTop: '0.25em', marginBottom: '0.5em' }}>
+              Saturday, the 23rd of May
+            </h1>
+            <p>
               <b>Dress code:</b> Lounge suits{' '}
             </p>
           </SectionHeader>

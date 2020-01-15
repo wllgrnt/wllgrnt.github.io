@@ -7,8 +7,19 @@ const normalize = `
 const GlobalStyles = createGlobalStyle`
   ${normalize};
 
+
+  /* latin */
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url(https://fonts.gstatic.com/s/playfairdisplay/v18/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
   body {
-    font-family: ${props => props.theme.font.secondary};
+    font-family: ${props => props.theme.font.primary};
   }
 
   h1, h2, h3, p {
@@ -16,8 +27,8 @@ const GlobalStyles = createGlobalStyle`
     font-weight: normal;
   }
 
-  h1, h2 {
-    font-family: ${props => props.theme.font.primary};
+  h1, h2, h3 {
+    font-family: ${props => props.theme.font.secondary};
   }
 
   h1 {
@@ -33,8 +44,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   p {
+    font-family: ${props => props.theme.font.primary};
     ${props => props.theme.font_size.regular};
     // color: ${props => props.theme.color.black.regular};
+
   }
 
   @media (max-width: ${props => props.theme.screen.sm}) {

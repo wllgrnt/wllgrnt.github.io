@@ -26,8 +26,10 @@ const TheDayAfter = () => (
         <Container>
           <SectionHeader accent>
             <h3>The Day After</h3>
-            <h1 style={{ marginTop: '0.5em' }}>Sunday, the 24rd of May</h1>
-            <p style={{ marginTop: '0.5em' }}>Dress code: Comfy</p>
+            <h1 style={{ marginTop: '0.25em', marginBottom: '0.5em' }}>
+              Sunday, the 24th of May
+            </h1>
+            <p>Dress code: Comfy</p>
           </SectionHeader>
           <Grid>
             <div style={{ marginTop: '1em', textAlign: 'center' }}>
