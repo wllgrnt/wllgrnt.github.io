@@ -35,11 +35,12 @@ const RSVP = () => (
                 To let us know you're coming, and choose your dinner options,
                 please use the form below:
               </p>
-              <div style={{ marginTop: '50px' }}>
+              <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                 <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
-                  Thanks!
+                  RSVP
                 </StyledExternalLink>
               </div>
+              <p>Thanks</p>
             </div>
             <Art>
               <Img fluid={data.art_ideas.childImageSharp.fluid} />

@@ -46,16 +46,15 @@ const OnTheDay = () => (
     render={data => (
       <Section id="ontheday">
         <Container>
-          <h1>On the Day</h1>
+          <h3>On the Day</h3>
 
-          <h3 style={{ marginTop: '0.5em' }}>Saturday, the 23rd of May</h3>
+          <h1 style={{ marginTop: '0.5em' }}>Saturday, the 23rd of May</h1>
           <p style={{ marginTop: '0.5em' }}>
             <b>Dress code:</b> Lounge suits{' '}
           </p>
-          <Grid></Grid>
           <Grid inverse>
             <div>
-              <h2>The Ceremony</h2>
+              <h2>Ceremony</h2>
               <p>
                 <b>Start time:</b> Two o' clock <br />
                 <b>Location:</b> St. Nicholas’ Church, <br />
@@ -76,22 +75,26 @@ const OnTheDay = () => (
               <Img fluid={data.art_tram.childImageSharp.fluid} />
             </Art>
             <div>
-              <h2>Liminal Space</h2>
+              {/* <h2>Liminal Space</h2> */}
               <p>
-                A tram will take guests from the church to the reception venue.
+                A private tram will take guests from the church to the reception
+                venue.
+                <br />
                 <br />
               </p>
               <p>
-                It is a ten minute walk between the church and the Právnická
-                fakulta tram stop. It is another five minute walk uphill from
-                the drop-off stop to the reception venue. Plan your footwear
-                accordingly!{' '}
+                It is a ten minute walk between the church and the getting-on
+                stop (Právnická Fakulta). It is another five minute walk uphill
+                from the drop-off stop (Malostranské námestí) to the reception
+                venue.
+                <br />
+                Plan your footwear accordingly!{' '}
               </p>
             </div>
           </Grid>
           <Grid inverse>
             <div>
-              <h2>The Reception</h2>
+              <h2>Reception</h2>
               <p>
                 <b>Location:</b> Villa Richter,
                 <br />

@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 import { Section, Container } from '@components/global'
 
-const GettingHere = () => (
+const Transport = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -26,46 +26,31 @@ const GettingHere = () => (
         <Container>
           <h1>Transport</h1>
           <Grid>
-            <Art>
+            {/* <Art>
               <Img fluid={data.art_tram.childImageSharp.fluid} />
-            </Art>
+            </Art> */}
             <div>
               {/* <h2>Transport Info</h2> */}
               <h3>Getting from the airport</h3>
               <p>
                 An Uber from the airport will cost £15. Alternatively, take
-                public transport!
+                public transport! A 90-minute ticket costs 32Kc, and you can
+                take bus 100 or 119, followed by the underground. There are
+                ticket machines in the baggage reclaim area as well as at the
+                airport station. Hailing a regular taxi from the airport without
+                pre-booking isn't recommended.
               </p>
             </div>
-          </Grid>
-          <Grid inverse>
             <div>
               <h3> In and around Prague</h3>
               <p>
                 Prague probably has the world's best public transport system.
-                The tram system will take contactless payments, and costs 24Kc
-                for a 20-minute trip. Google maps or equivalent will give routes
-                and directions.
+                The tram system takes contactless payments, and costs 24Kc for a
+                30-minute trip. Google maps or equivalent will give routes and
+                directions.
               </p>
             </div>
-            <Art>
-              <Img fluid={data.art_tram.childImageSharp.fluid} />
-            </Art>
           </Grid>
-
-          {/* <Grid inverse>
-            <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>Nothing new to learn here</h2>
-              <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
-              </p>
-            </div>
-          </Grid> */}
         </Container>
       </Section>
     )}
@@ -74,19 +59,13 @@ const GettingHere = () => (
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
   text-align: center;
-  align-items: center;
-  justify-items: center;
+  // align-items: center;
+  // justify-items: center;
   margin: 24px 0;
-
-  ${props =>
-    props.inverse &&
-    `
-    text-align: center;
-    grid-template-columns: 2fr 3fr;
-  `}
+  margin-top: 48px;
 
   h2 {
     margin-bottom: 16px;
@@ -117,4 +96,4 @@ const Art = styled.figure`
   width: 100%;
 `
 
-export default GettingHere
+export default Transport

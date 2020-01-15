@@ -5,15 +5,15 @@ import Navbar from '@common/Navbar'
 
 import OnTheDay from '@sections/OnTheDay'
 import TheDayAfter from '@sections/TheDayAfter'
-import GettingHere from '@sections/GettingHere'
+import Transport from '@sections/Transport'
 import About from '@sections/About'
 import Registry from '@sections/Registry'
 import RSVP from '@sections/RSVP'
 
 import Header from '@sections/Header'
-import Brands from '@sections/Brands'
-import Team from '@sections/Team'
-import Faq from '@sections/Faq'
+// import Brands from '@sections/Brands'
+// import Team from '@sections/Team'
+// import Faq from '@sections/Faq'
 import Footer from '@sections/Footer'
 
 const IndexPage = () => (
@@ -22,7 +22,7 @@ const IndexPage = () => (
     <Header />
     <OnTheDay />
     <TheDayAfter />
-    <GettingHere />
+    <Transport />
     <About />
     <Registry />
     <RSVP />

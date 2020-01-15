@@ -21,6 +21,17 @@ const Header = () => (
           }
         }
 
+        art_castle: file(
+          sourceInstanceName: { eq: "art" }
+          name: { eq: "castle_trimmed" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 1400) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+
         art_candw_skiing: file(
           sourceInstanceName: { eq: "art" }
           name: { eq: "candw_skiing_circle_cropped" }
@@ -57,32 +68,16 @@ const Header = () => (
     `}
     render={data => (
       <HeaderWrapper>
-        {/* <Art>
-          <Img fluid={data.art_candw.childImageSharp.fluid} />
-        </Art> */}
         <Container>
-          {/* <Grid>
-            <Art>
-              <Img fluid={data.art_candw_skiing.childImageSharp.fluid} />
-            </Art>
-            <Text>
-              <h1>Will and Christina are getting married!</h1>
-              <br />
-              <p>(again)</p>
-            </Text>
-          </Grid> */}
           <Grid>
             <Art>
-              <Img fluid={data.art_candw_ham.childImageSharp.fluid} />
+              <Img fluid={data.art_castle.childImageSharp.fluid} />
             </Art>
             <Text>
               <h1>Will and Christina are getting married!</h1>
               <br />
               <p>(again)</p>
             </Text>
-            <Art>
-              <Img fluid={data.art_candw_skiing.childImageSharp.fluid} />
-            </Art>
           </Grid>
         </Container>
       </HeaderWrapper>
@@ -91,7 +86,7 @@ const Header = () => (
 )
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.theme.color.primary};
+  background-color: ${props => props.theme.color.white.regular};
   padding-top: 96px;
 
   @media (max-width: ${props => props.theme.screen.md}) {
@@ -115,7 +110,7 @@ const Art = styled.figure`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 4fr 2fr;
   align-items: center;
   text-align: center;
   grid-gap: 64px;

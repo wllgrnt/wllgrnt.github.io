@@ -22,16 +22,16 @@ export const Nav = styled.nav`
     }
   }
 
-  #navlink_registry {
-    a {
-      color: ${props => props.theme.color.secondary};
-    }
-    &.active {
-      a {
-        color: ${props => props.theme.color.white.dark};
-      }
-    }
-  }
+  // #navlink_registry {
+  //   a {
+  //     color: ${props => props.theme.color.secondary};
+  //   }
+  //   &.active {
+  //     a {
+  //       color: ${props => props.theme.color.white.dark};
+  //     }
+  //   }
+  // }
 `
 
 export const StyledContainer = styled(Container)`
@@ -65,7 +65,7 @@ export const NavListWrapper = styled.div`
 export const NavItem = styled.li`
   margin: 0 0.75em;
   font-family: ${props => props.theme.font.secondary};
-  ${props => props.theme.font_size.small};
+  ${props => props.theme.font_size.regular};
   font-weight: bold;
 
   a {
@@ -90,7 +90,7 @@ export const MobileMenu = styled.div`
 
 export const Brand = styled.div`
   font-family: ${props => props.theme.font.primary};
-  ${props => props.theme.font_size.large};
+  ${props => props.theme.font_size.regular};
 `
 
 export const Mobile = styled.div`

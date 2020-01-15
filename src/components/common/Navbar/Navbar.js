@@ -19,7 +19,7 @@ const NAV_ITEMS = [
   'On the Day',
   'The Day After',
   'Transport',
-  'About',
+  'About Us',
   'Registry',
   'RSVP',
 ]
@@ -70,7 +70,7 @@ class Navbar extends Component {
         )}
         currentClassName="active"
         mobile={mobile}
-        offset={-64}
+        offset={-300}
       >
         {NAV_ITEMS.map(navItem => (
           <NavItem key={navItem} id={this.getNavID(navItem)}>
