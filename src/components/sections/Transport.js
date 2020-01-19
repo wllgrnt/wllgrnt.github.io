@@ -6,7 +6,7 @@ import { Section, Container, SectionHeader } from '@components/global'
 const Transport = () => (
   <Section id="transport">
     <Container>
-      <SectionHeader accent>
+      <SectionHeader accent="rgba(236, 150, 58, 0.2)">
         <h1>Transport</h1>
       </SectionHeader>
       <Grid>
@@ -50,6 +50,10 @@ const Grid = styled.div`
   margin-top: 48px;
 
   h2 {
+    margin-bottom: 16px;
+  }
+
+  h3 {
     margin-bottom: 16px;
   }
 

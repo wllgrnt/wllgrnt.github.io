@@ -46,7 +46,7 @@ const About = () => (
     render={data => (
       <Section id="aboutus">
         <Container>
-          <SectionHeader accent>
+          <SectionHeader accent="rgba(171, 189, 111, 0.2)">
             <h1>About Us</h1>
           </SectionHeader>
           <Grid>

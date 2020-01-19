@@ -46,7 +46,7 @@ const OnTheDay = () => (
     render={data => (
       <Section id="ontheday">
         <Container>
-          <SectionHeader accent>
+          <SectionHeader accent="rgba(157, 43, 65, 0.2)">
             <h3>On the Day</h3>
 
             <h1 style={{ marginTop: '0.25em', marginBottom: '0.5em' }}>
@@ -91,6 +91,7 @@ const OnTheDay = () => (
                 stop (Právnická Fakulta). It is another five minute walk uphill
                 from the drop-off stop (Malostranské námestí) to the reception
                 venue.
+                <br />
                 <br />
                 Plan your footwear accordingly!{' '}
               </p>

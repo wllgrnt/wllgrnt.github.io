@@ -10,17 +10,6 @@ const Header = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_build: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "build" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
         art_castle: file(
           sourceInstanceName: { eq: "art" }
           name: { eq: "castle_trimmed" }
@@ -31,35 +20,12 @@ const Header = () => (
             }
           }
         }
-
-        art_candw_skiing: file(
+        art_castle_with_text: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "candw_skiing_circle_cropped" }
+          name: { eq: "castle_with_text" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-
-        art_candw_ham: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "candw_ham_circle_crop" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-
-        art_candw: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "WaC_edited_text" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1400, maxHeight: 500) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -69,18 +35,18 @@ const Header = () => (
     render={data => (
       <HeaderWrapper>
         <Container>
-          <Grid>
-            <Art>
-              <Img fluid={data.art_castle.childImageSharp.fluid} />
-            </Art>
-            <Text>
-              <h1 style={{ fontFamily: `"Palatino", serif` }}>
+          {/* <Grid> */}
+          <Art>
+            <Img fluid={data.art_castle_with_text.childImageSharp.fluid} />
+          </Art>
+          {/* <Text>
+              <h1 style={{ fontFamily: `"Lorca", serif`, fontWeight: "normal" }}>
                 Will and Christina are getting married!
               </h1>
               <br />
               <p>(again)</p>
             </Text>
-          </Grid>
+          </Grid> */}
         </Container>
       </HeaderWrapper>
     )}

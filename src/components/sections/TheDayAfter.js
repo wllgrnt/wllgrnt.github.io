@@ -6,7 +6,7 @@ import { Section, Container, SectionHeader } from '@components/global'
 const TheDayAfter = () => (
   <Section id="thedayafter">
     <Container>
-      <SectionHeader accent>
+      <SectionHeader accent="rgba(204, 88, 49, 0.2)">
         <h3>The Day After</h3>
         <h1 style={{ marginTop: '0.25em', marginBottom: '0.5em' }}>
           Sunday, the 24th of May

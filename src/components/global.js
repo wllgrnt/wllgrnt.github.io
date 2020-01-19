@@ -50,7 +50,7 @@ export const Section = styled.section`
 export const SectionHeader = styled.div`
   ${props =>
     props.accent &&
-    `background-color: ${props.theme.color.sectionheader}; 
+    `background-color: ${props.accent}; 
   `};
   // Horrible hacks to make the colouring full-width
   margin: 0 -9999rem;

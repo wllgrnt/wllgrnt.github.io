@@ -4,7 +4,9 @@ import { Container } from '@components/global'
 
 export const Nav = styled.nav`
   padding: 16px 0;
-  background-color: ${props => props.theme.color.primary};
+  // background-color: ${props => props.theme.color.primary};
+  background-color: rgba(189, 97, 94,1.0);
+
   position: fixed;
   width: 100%;
   top: 0;
@@ -14,6 +16,9 @@ export const Nav = styled.nav`
   #navlink_rsvp {
     a {
       color: ${props => props.theme.color.secondary};
+      font-family: "Cinzel Bold", serif;
+      // font-weight: black;
+      
     }
     &.active {
       a {
@@ -66,7 +71,7 @@ export const NavItem = styled.li`
   margin: 0 0.75em;
   font-family: ${props => props.theme.font.secondary};
   ${props => props.theme.font_size.regular};
-  // font-weight: 500;
+  font-weight: bold;
 
   a {
     text-decoration: none;
@@ -91,7 +96,7 @@ export const MobileMenu = styled.div`
 export const Brand = styled.div`
   font-family: ${props => props.theme.font.secondary};
   ${props => props.theme.font_size.regular};
-  // font-weight: bold;
+  font-weight: bold;
 `
 
 export const Mobile = styled.div`

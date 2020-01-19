@@ -56,7 +56,9 @@ const SocialIcons = styled.div`
 `
 
 const FooterWrapper = styled.footer`
-  background-color: ${props => props.theme.color.primary};
+  // background-color: rgba(110, 46, 91,0.4);
+  background-color: rgba(56, 84, 148, 0.4);
+
   padding: 32px 0;
 `
 

@@ -8,7 +8,7 @@ import ExternalLink from '@common/ExternalLink'
 const RSVP = () => (
   <Section id="rsvp">
     <Container>
-      <SectionHeader accent>
+      <SectionHeader accent="rgba(94, 186, 189, 0.2)">
         <h1>RSVP</h1>
       </SectionHeader>
       <Grid>
@@ -18,7 +18,7 @@ const RSVP = () => (
             use the form below: <br />
             <br />
             <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
-              <b>RSVP</b>
+              <b>Click here to RSVP</b>
             </StyledExternalLink>
             <br />
             <br />

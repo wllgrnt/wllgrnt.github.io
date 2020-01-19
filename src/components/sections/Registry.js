@@ -7,7 +7,7 @@ import ExternalLink from '@common/ExternalLink'
 const Registry = () => (
   <Section id="registry">
     <Container>
-      <SectionHeader accent>
+      <SectionHeader accent="rgba(99,177,94, 0.2)">
         <h1>Registry</h1>
       </SectionHeader>
       <Grid>
