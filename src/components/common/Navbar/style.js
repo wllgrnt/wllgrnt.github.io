@@ -16,8 +16,8 @@ export const Nav = styled.nav`
   #navlink_rsvp {
     a {
       color: ${props => props.theme.color.secondary};
-      font-family: "Cinzel Bold", serif;
-      // font-weight: black;
+      font-family: "Cinzel ", serif;
+      font-weight: 400;
       
     }
     &.active {
