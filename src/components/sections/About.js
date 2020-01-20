@@ -78,7 +78,7 @@ const About = () => (
             <div>
               <p>
                 Now we live in San Francisco! Christina is a postdoctoral
-                researcher at UCSF, whilst Will is an unemployed loafer.
+                researcher at UCSF, whilst Will has just submitted his PhD.
               </p>
             </div>
             <Art>

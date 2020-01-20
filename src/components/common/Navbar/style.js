@@ -90,7 +90,8 @@ export const NavItem = styled.li`
 
 export const MobileMenu = styled.div`
   width: 100%;
-  background: ${props => props.theme.color.primary};
+  background: rgba(189, 97, 94,1.0);
+  // background: ${props => props.theme.color.primary};
 `
 
 export const Brand = styled.div`

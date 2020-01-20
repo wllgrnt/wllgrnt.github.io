@@ -20,14 +20,15 @@ const Footer = () => (
         <span>
           Adapted from
           {` `}
-          <ExternalLink href="https://www.gatsbyjs.org/starters/ajayns/gatsby-absurd/">
+          <StyledExternalLink href="https://www.gatsbyjs.org/starters/ajayns/gatsby-absurd/">
             gatbsy-absurd
-          </ExternalLink>
-          . Artwork by
+          </StyledExternalLink>
           {` `}
-          <ExternalLink href="http://spring-studio.cz/">
+          by Will. Artwork by
+          {` `}
+          <StyledExternalLink href="http://spring-studio.cz/">
             Spring Studio
-          </ExternalLink>
+          </StyledExternalLink>
         </span>
       </Copyright>
       {/* <SocialIcons>
@@ -82,6 +83,16 @@ const StyledContainer = styled(Container)`
     flex-direction: column;
     text-align: center;
   }
+`
+
+const StyledExternalLink = styled(ExternalLink)`
+  // margin: 2em 0;
+  &:hover {
+    color: ${props => props.theme.color.black.lighter};
+  }
+  text-decoration: none;
+  color: inherit;
+  // ${props => props.theme.font_size.regular};
 `
 
 export default Footer
