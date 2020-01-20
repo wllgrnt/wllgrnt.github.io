@@ -135,7 +135,6 @@ const Grid = styled.div`
           order: 3;
         }
     `}
-
   }
 `
 
