@@ -160,6 +160,16 @@ const Grid = styled.div`
           order: 1;
         }
     `}
+
+    ${props =>
+      !props.inverse &&
+      `
+        ${Art} {
+          order: 3;
+        }
+    `}
+
+
   }
 `
 

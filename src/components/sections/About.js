@@ -124,9 +124,18 @@ const Grid = styled.div`
       props.inverse &&
       `
         ${Art} {
-          order: 2;
+          order: 1;
         }
     `}
+
+    ${props =>
+      !props.inverse &&
+      `
+        ${Art} {
+          order: 3;
+        }
+    `}
+
   }
 `
 
