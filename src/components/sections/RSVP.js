@@ -9,7 +9,7 @@ const RSVP = () => (
   <Section id="rsvp">
     <Container>
       <SectionHeader accent="rgba(94, 186, 189, 0.2)">
-        <h1>RSVP by 29/2/20 </h1>
+        <h1>RSVP (by 29/02/20) </h1>
       </SectionHeader>
       <Grid>
         <div>
