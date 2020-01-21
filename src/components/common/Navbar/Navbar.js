@@ -59,6 +59,13 @@ class Navbar extends Component {
       .split(' ')
       .join('')
 
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
       <Scrollspy
@@ -87,7 +94,9 @@ class Navbar extends Component {
     return (
       <Nav {...this.props}>
         <StyledContainer>
-          <Brand>Prague, May 2020</Brand>
+          <button onClick={this.scrollToTop} style={{ color: 'black' }}>
+            <Brand>Prague, May 2020</Brand>
+          </button>
           <Mobile>
             <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
               <MenuIcon />
