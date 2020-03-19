@@ -22,7 +22,7 @@ const Header = () => (
         }
         art_castle_with_text: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "castle_with_text" }
+          name: { eq: "castle_with_covid_text" }
         ) {
           childImageSharp {
             fluid(maxWidth: 1400) {

@@ -15,7 +15,7 @@ export const Nav = styled.nav`
   // make the registry and rsvp a different color
   #navlink_rsvp {
     a {
-      color: ${props => props.theme.color.secondary};
+      // color: ${props => props.theme.color.secondary};
       font-family: "Cinzel ", serif;
       font-weight: 400;
       
