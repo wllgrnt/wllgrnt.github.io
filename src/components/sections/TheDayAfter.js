@@ -9,7 +9,7 @@ const TheDayAfter = () => (
       <SectionHeader accent="rgba(204, 88, 49, 0.2)">
         <h3>The Day After</h3>
         <h1 style={{ marginTop: '0.25em', marginBottom: '0.5em' }}>
-          Sunday, the 24th of May
+          Sunday, the 30th of May
         </h1>
         <p>Dress code: Comfy</p>
       </SectionHeader>

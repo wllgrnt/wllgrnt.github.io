@@ -50,7 +50,7 @@ const OnTheDay = () => (
             <h3>On the Day</h3>
 
             <h1 style={{ marginTop: '0.25em', marginBottom: '0.5em' }}>
-              Saturday, the 23rd of May
+              Saturday, the 29th of May
             </h1>
             <p>
               <b>Dress code:</b> Lounge suits{' '}

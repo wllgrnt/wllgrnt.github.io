@@ -9,26 +9,31 @@ const RSVP = () => (
   <Section id="rsvp">
     <Container>
       <SectionHeader accent="rgba(94, 186, 189, 0.2)">
-        <h1>RSVP (by 29/02/20) </h1>
+        <h1>RSVP</h1>
       </SectionHeader>
       <Grid>
         <div>
           <p>
-            To let us know you're coming, and choose your dinner options, please
-            use the form below: <br />
-            <br />
-            <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
-              <b>Click here to RSVP</b>
-            </StyledExternalLink>
-            <br />
-            <br />
-            Thanks!
+            It's a long while away yet, so no need to RSVP!
           </p>
         </div>
       </Grid>
     </Container>
   </Section>
 )
+
+
+// To let us know you're coming, and choose your dinner options, please
+// use the form below: <br />
+// <br />
+// <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSfIzqQRGCqsW2pdUSMcEx2uWtCTIHQxavdRxrlIWs2nBj3ikg/viewform">
+//   <b>Click here to RSVP</b>
+// </StyledExternalLink>
+// <br />
+// <br />
+// Thanks!
+// </p>
+
 
 const Grid = styled.div`
   display: grid;

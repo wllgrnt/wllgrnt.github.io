@@ -95,7 +95,7 @@ class Navbar extends Component {
       <Nav {...this.props}>
         <StyledContainer>
           <button onClick={this.scrollToTop} style={{ color: 'black' }}>
-            <Brand>Prague, May 2020</Brand>
+            <Brand>Prague, May 2021</Brand>
           </button>
           <Mobile>
             <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
